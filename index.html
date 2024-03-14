@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; border: 2px solid black; border-radius: 8px; height: 280px; width: 400px;padding-top: 10px; float: inline-start;">
+        <h2>FIND MINIMUM AND MAXIMUM</h2>
+        <form style="margin-top: 40px;">
+                <label for="">Enter the value:</label>
+                <input type="text" id="num" placeholder="split the number using ,"><br><br>
+                <button type="button" style="background-color: rgb(10, 167, 44);color: white;border-radius: 4px;" onclick="minmax()">FIND</button>
+        </form>
+        <p id="minormax" style="font-weight: bolder; color: red;"></p>
+        </div>
+
+        <script>
+            function minmax(){
+                let num = document.getElementById("num").value;
+                let array = num.split(",").map(Number);
+                let min = array[0];
+                let max = array[0];
+
+                for (let i = 1; i < array.length; i++){
+                    if (array[i] > max){
+                        max = array[i];
+                    }
+                    if (array[i] < min){
+                        min = array[i];
+                    }
+                }
+                document.getElementById("minormax").innerHTML = "Minimum:"+min+"<br>"+"Maximum:"+max;
+            }
+        </script>
+</body>
+</html>
+
